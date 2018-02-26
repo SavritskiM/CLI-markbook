@@ -27,9 +27,7 @@ public class markbookAssignment {
     	all:
     	while(true){
     		System.out.println("What would you like to do?");
-    		System.out.println("(0) Exit\n(1) Edit Student\n(2) Remove Student");
-//    		System.out.println("(3) See class Avg.\n(4) See specific student average");
-//    		System.out.println("(5) See class list\n(6) See at-risk Students");
+    		System.out.println("(0) Exit\n(1) Edit Student\n(2) Remove Student\n(3) Add Student");
     		int cmd=sc.nextInt();
     		if(cmd==0)break;
     		else if(cmd==1){
@@ -74,10 +72,17 @@ public class markbookAssignment {
 					ind++;
 				}
     			System.out.println("Student "+sN+" not found");
+    		}else if(cmd==3){
+    			System.out.println("Enter the new student number:");
+    			int sN=sc.nextInt();
+    			System.out.println("Enter the new student name:");
+    			sc.nextLine();
+    			String name=sc.nextLine();
+    			markbook.add(new student(sN, name));
+    			System.out.println(sN+" added to class");
     		}
     	}
     	
     }
    
 }
-
