@@ -1,6 +1,7 @@
 import java.util.*;
 
 public class markbookAssignment {
+	static ArrayList<student>markbook;
 	static class student{
 		int sNum, avg;
 		String name;
@@ -10,10 +11,9 @@ public class markbookAssignment {
 			marks=new ArrayList<Integer>();
 		}
 	}
-
     public static void main(String[] args) {
     	Scanner sc = new Scanner(System.in);
-    	ArrayList<student>markbook=new ArrayList<student>();
+    	markbook=new ArrayList<student>();
     	System.out.println("Input the number of students:");
     	int n=sc.nextInt();
     	for(int i=0;i<n;i++){
@@ -91,5 +91,28 @@ public class markbookAssignment {
     	}
     	
     }
+    public static double studentAvg(int sN){
+    	double sum=0, ind=0;
+    	for(student e:markbook){
+    		if(e.sNum==sN){
+    			for(int i:e.marks){
+    				sum+=i;
+    				ind++;
+    			}
+    			break;
+    		}
+    	}
+    	return sum/ind;
+    }
+	public static double classAvg(){
+		double sum=0, ind=0;
+		for(student e:markbook){
+			for(int i:e.marks){
+				sum+=i;
+				ind++;
+			}
+		}
+		return sum/ind;
+	}
    
 }
