@@ -28,6 +28,7 @@ public class markbookAssignment {
     	while(true){
     		System.out.println("What would you like to do?");
     		System.out.println("(0) Exit\n(1) Edit Student\n(2) Remove Student\n(3) Add Student");
+    		System.out.println("(4) See Class List");
     		int cmd=sc.nextInt();
     		if(cmd==0)break;
     		else if(cmd==1){
@@ -80,6 +81,12 @@ public class markbookAssignment {
     			String name=sc.nextLine();
     			markbook.add(new student(sN, name));
     			System.out.println(sN+" added to class");
+    		}else if(cmd==4){
+    			System.out.println("Class list:");
+    			for(student i:markbook){
+    				System.out.println(i.name+" "+i.sNum);
+    			}
+    			System.out.println();
     		}
     	}
     	
